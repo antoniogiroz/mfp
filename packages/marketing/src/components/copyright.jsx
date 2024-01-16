@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
-import MaterialLink from '@material-ui/core/Link';
+import { Typography } from '@mui/material';
+import MaterialLink from '@mui/material/Link';
 import { Link } from 'react-router-dom';
 
 export function Copyright() {

@@ -1,12 +1,15 @@
 import React from 'react';
+import { Header } from '../components/header.jsx';
 import { MarketingApp } from '../components/marketing-app.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 export function App() {
   return (
-    <>
-      <h1>Hi there!</h1>
-      <hr />
-      <MarketingApp />
-    </>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <MarketingApp />
+      </div>
+    </BrowserRouter>
   );
 }

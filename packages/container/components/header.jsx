@@ -82,7 +82,7 @@ export function Header({ signedIn, onSignOut }) {
             variant="outlined"
             sx={styles.link}
             component={RouterLink}
-            to={signedIn ? '/' : '/auth/signin'}
+            to={signedIn ? '/' : '/auth/sign-in'}
             onClick={onClick}
           >
             {signedIn ? 'Logout' : 'Login'}

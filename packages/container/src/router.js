@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { MarketingApp } from './components/marketing-app.jsx';
-import { AuthApp } from './components/auth-app.jsx';
 import { Layout } from './layout.jsx';
+
+const MarketingApp = lazy(() => import('./components/marketing-app.jsx'));
+const AuthApp = lazy(() => import('./components/auth-app.jsx'));
 
 const routes = [
   {

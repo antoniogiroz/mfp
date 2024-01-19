@@ -3,7 +3,7 @@ import { mount } from 'marketing/MarketingApp';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { router } from '../router';
 
-export function MarketingApp() {
+export default function MarketingApp() {
   const ref = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();

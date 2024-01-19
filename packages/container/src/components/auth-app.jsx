@@ -3,7 +3,7 @@ import { mount } from 'auth/AuthApp';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { router } from '../router';
 
-export default function AuthApp() {
+export default function AuthApp({ onSignIn }) {
   const ref = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,6 +16,7 @@ export default function AuthApp() {
           navigate(nextPathname);
         }
       },
+      onSignIn,
     });
 
     router.subscribe(({ location }) => {

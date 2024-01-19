@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { setupRouter, router } from './router';
 
-export function mount(el, { onNavigate, initialPath }) {
-  setupRouter(initialPath);
+export function mount(el, { onNavigate, initialPath, onSignIn }) {
+  setupRouter(initialPath, onSignIn);
+
   ReactDOM.createRoot(el).render(<RouterProvider router={router} />);
 
   router.subscribe(({ location }) => {

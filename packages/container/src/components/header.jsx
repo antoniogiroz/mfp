@@ -9,7 +9,7 @@ import {
   useTheme,
 } from '@mui/material';
 
-export function Header({ signedIn, onSignOut }) {
+export function Header({ isSignedIn, onSignOut }) {
   const theme = useTheme();
 
   const styles = {
@@ -54,7 +54,7 @@ export function Header({ signedIn, onSignOut }) {
   };
 
   const onClick = () => {
-    if (signedIn && onSignOut) {
+    if (isSignedIn && onSignOut) {
       onSignOut();
     }
   };
@@ -82,10 +82,10 @@ export function Header({ signedIn, onSignOut }) {
             variant="outlined"
             sx={styles.link}
             component={RouterLink}
-            to={signedIn ? '/' : '/auth/sign-in'}
+            to={isSignedIn ? '/' : '/auth/sign-in'}
             onClick={onClick}
           >
-            {signedIn ? 'Logout' : 'Login'}
+            {isSignedIn ? 'Logout' : 'Login'}
           </Button>
         </Toolbar>
       </AppBar>

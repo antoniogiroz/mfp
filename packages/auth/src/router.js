@@ -14,7 +14,13 @@ const routes = [
   },
 ];
 
-export const router =
-  process.env.NODE_ENV === 'development'
-    ? createBrowserRouter(routes)
-    : createMemoryRouter(routes);
+export let router;
+
+export function setupRouter(initialPath) {
+  router =
+    process.env.NODE_ENV === 'development'
+      ? createBrowserRouter(routes)
+      : createMemoryRouter(routes, {
+          initialEntries: [initialPath],
+        });
+}

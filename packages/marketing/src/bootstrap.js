@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './router';
+import { setupRouter, router } from './router';
 
-export function mount(el, { onNavigate }) {
+export function mount(el, { onNavigate, initialPath }) {
+  setupRouter(initialPath);
   ReactDOM.createRoot(el).render(<RouterProvider router={router} />);
 
   router.subscribe(({ location }) => {

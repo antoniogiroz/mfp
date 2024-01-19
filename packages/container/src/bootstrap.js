@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './app.jsx';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
-ReactDOM.createRoot(document.querySelector('#root')).render(<App />);
+ReactDOM.createRoot(document.querySelector('#root')).render(
+  <RouterProvider router={router} />
+);
